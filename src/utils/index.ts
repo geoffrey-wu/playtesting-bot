@@ -58,7 +58,7 @@ export const getCategoryName = (metadata: string | undefined) => {
     let category = "";
     if (metadata) {
         metadata = removeSpoilers(metadata);
-        let results = metadata.match(/(.*), (.*)/);
+        let results = metadata.match(/([^,]*), (.*)/);
 
         if (results) {
             category = results[2].trim();
@@ -72,7 +72,7 @@ export const getAuthorName = (metadata: string | undefined) => {
     let author = "";
     if (metadata) {
         metadata = removeSpoilers(metadata);
-        let results = metadata.match(/(.*), (.*)/);
+        let results = metadata.match(/([^,]*), (.*)/);
 
         if (results) {
             author = results[1].trim();
